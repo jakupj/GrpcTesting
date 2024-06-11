@@ -11,7 +11,7 @@ namespace Client
 {
     internal class Program
     {
-        private static Streamer.StreamerClient _client;
+        private static Streamer.StreamerClient? _client;
 
         static async Task<int> Main(string[] args)
         {
