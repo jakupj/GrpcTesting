@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "GrpcService";
+
+package Streamer;
+
+service Streamer {
+  rpc DownloadTest (StreamRequest) returns (stream Message);  
+}
+
+
+message StreamRequest {
+  int32 rate = 1;
+}
+
+message StreamReply {
+  string value = 1;
+}
+
+message Message {
+  google.protobuf.Timestamp timestamp = 1;
+  int64 Ticks = 2;
+}
